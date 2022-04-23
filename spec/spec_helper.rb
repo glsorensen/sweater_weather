@@ -16,7 +16,7 @@
 require 'simplecov'
 require 'webmock/rspec'
 SimpleCov.start 'rails'
-SimpleCov.add_filter ['channels', 'jobs', 'mailers', 'models/application_record.rb']
+SimpleCov.add_filter ['channels', 'jobs', 'mailers', 'models/application_record.rb', 'app/controllers/application_controller.rb']
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
