@@ -1,7 +1,7 @@
 require 'faraday'
 require 'json'
 
-class ForecastService
+class LocationService
   def self.connection
     url = "http://www.mapquestapi.com/geocoding/v1/address?"
     Faraday.new(url: url) do |faraday|
