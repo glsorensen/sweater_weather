@@ -8,7 +8,7 @@ def conn
   end
 
 
-  def get_restaurants(location, type, open_at)
+  def get_restaurants(location, type)
     response = conn.get("/v3/businesses/search") do |r|
       r.params['location'] = location
       r.params['limit'] = 3
