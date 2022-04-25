@@ -1,20 +1,20 @@
 class MunchiesSerializer
 
-  def self.return(forecast,)
+  def self.return(trip_duration, yelp_results, destination_city, get_weather)
     {
       "data": {
         "id": "null",
         "type": "munchie",
         "attributes": {
-          "destination_city": "Pueblo, CO",
-          "travel_time": "1 hours 48 min",
+          "destination_city": destination_city,
+          "travel_time": trip_duration,
           "forecast": {
-            "summary": forecast[:current][:weather][0][:description],
-            "temperature": forecast[:current][:temp]
+            "summary": get_weather[:current][:weather][0][:description],
+            "temperature": get_weather[:current][:temp]
           },
           "restaurant": {
-            "name": "Chinese Restaurant",
-            "address": "4602 N. Elizabeth St, Ste 120, Pueblo, CO 81008"
+            "name": yelp_results[:name],
+            "address": yelp_results[:address]
           }
         }
       }
