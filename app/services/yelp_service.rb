@@ -11,7 +11,7 @@ def self.conn
   def self.get_restaurants(location, type)
     response = conn.get("/v3/businesses/search") do |r|
       r.params['location'] = location
-      r.params['limit'] = 3
+      r.params['limit'] = 1
       r.params['term'] = type
     end
     json = JSON.parse(response.body, symbolize_names: true)
