@@ -12,7 +12,7 @@ class Munchie
     @id = nil
     @type = 'munchie'
     @destination_city = destination.titleize
-    @travel_time = trip_duration[:route][:legs].first[:formattedTime]
+    @travel_time = trip_duration.travel_time
     @forecast = {
       summary: get_weather[:current][:weather].first[:description],
       temperature: get_weather[:current][:temp]
