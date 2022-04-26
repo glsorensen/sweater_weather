@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './app/poros/roadtrip_weather'
 class RoadTrip
   attr_reader :start_city, :end_city, :temperature, :conditions, :id, :travel_time

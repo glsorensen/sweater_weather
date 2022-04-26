@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RoadtripWeather
   attr_reader :temperature, :conditions
 
