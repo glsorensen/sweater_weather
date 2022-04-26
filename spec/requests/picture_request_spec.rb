@@ -1,9 +1,8 @@
 require 'rails_helper'
 RSpec.describe 'forecast request' do
   it 'returns json' do
-
-    headers = { 'CONTENT_TYPE' => 'application/json', "Accept" => 'application/json' }
-    get '/api/v1/pictures', headers: headers, params: { location: "denver,co" }
+    headers = { 'CONTENT_TYPE' => 'application/json', 'Accept' => 'application/json' }
+    get '/api/v1/pictures', headers: headers, params: { location: 'denver,co' }
     background = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
     expect(response.status).to eq(200)
@@ -21,6 +20,5 @@ RSpec.describe 'forecast request' do
 
     expect(background[:data][:attributes]).to_not have_key(:width)
     expect(background[:data][:attributes]).to_not have_key(:height)
-
   end
 end

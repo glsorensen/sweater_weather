@@ -6,8 +6,7 @@ class Munchie
               :forecast,
               :yelp_results
 
-  def initialize(destination, trip_duration, yelp_results, destination_city, get_weather)
-
+  def initialize(destination, trip_duration, yelp_results, _destination_city, get_weather)
     @id = nil
     @type = 'munchie'
     @destination_city = destination.titleize
@@ -16,7 +15,7 @@ class Munchie
       summary: get_weather[:current][:weather].first[:description],
       temperature: get_weather[:current][:temp]
     }
-  
+
     @yelp_results = {
       name: yelp_results[:businesses].first[:name],
       address: yelp_results[:businesses].first[:location][:display_address]

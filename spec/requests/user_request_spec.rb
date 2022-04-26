@@ -4,11 +4,11 @@ RSpec.describe 'users request' do
     it 'returns json' do
       expect(User.count).to eq(0)
       data = {
-        "email": "gls@gmail.com",
-        "password": "password",
-        "password_confirmation": "password"
+        "email": 'gls@gmail.com',
+        "password": 'password',
+        "password_confirmation": 'password'
       }
-      post "/api/v1/users", params: data
+      post '/api/v1/users', params: data
       user = JSON.parse(response.body, symbolize_names: true)
       expect(User.count).to eq(1)
       expect(response).to be_successful
@@ -24,27 +24,26 @@ RSpec.describe 'users request' do
   end
 
   describe 'sad path' do
+    it 'will return an error if the password does not match' do
+      params = { email: 'whatever@example.com',
+                 password: 'password5',
+                 password_confirmation: 'password' }
 
-   it 'will return an error if the password does not match' do
-       params = { email: 'whatever@example.com',
-           password: 'password5',
-           password_confirmation: 'password'}
+      post '/api/v1/users', params: params
+      response_info = JSON.parse(response.body, symbolize_names: true)
+      expect(response_info[:status]).to eq(400)
+      expect(response_info[:error]).to eq('passwords do not match')
+    end
 
-       post "/api/v1/users", params: params
-       response_info = JSON.parse(response.body, symbolize_names: true)
-       expect(response_info[:status]).to eq(400)
-       expect(response_info[:error]).to eq('passwords do not match')
-   end
-
-   it 'will return an error if email is taken' do
-       User.create!(email: 'whatever@example.com', password: 'password')
-       params = { email: 'whatever@example.com',
-           password: 'password',
-           password_confirmation: 'password'}
-       post "/api/v1/users", params: params
+    it 'will return an error if email is taken' do
+      User.create!(email: 'whatever@example.com', password: 'password')
+      params = { email: 'whatever@example.com',
+                 password: 'password',
+                 password_confirmation: 'password' }
+      post '/api/v1/users', params: params
       response_info = JSON.parse(response.body, symbolize_names: true)
       expect(response_info[:status]).to eq(400)
       expect(response_info[:error]).to eq('email taken')
-   end
- end
+    end
+  end
 end

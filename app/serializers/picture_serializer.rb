@@ -18,7 +18,6 @@ class PictureSerializer
             "logo": background[:photos][0][:src][:small]
           }
         }
-      }
-    }
+      } }
   end
 end
