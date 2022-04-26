@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# frozen_string_literal: true
+
+>>>>>>> 57d9865 (Rubocop 3)
 class RoadtripWeather
   attr_reader :temperature, :conditions
 
