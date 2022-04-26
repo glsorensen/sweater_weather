@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 require 'rails_helper'
 
->>>>>>> 57d9865 (Rubocop 3)
-require 'rails_helper'
-
 RSpec.describe DurationFacade do
   describe 'happy path' do
     it 'will return a RoadTrip object if condtions are met', :vcr do
