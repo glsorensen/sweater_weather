@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe LocationFacade do
   it '.find_coords', :vcr do

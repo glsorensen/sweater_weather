@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MunchieSerializer
   include JSONAPI::Serializer
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ForecastService
   def self.connection
     url = 'https://api.openweathermap.org/data/2.5/onecall?'

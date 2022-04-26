@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserSerializer
   def self.user_data(user)
     { "data":

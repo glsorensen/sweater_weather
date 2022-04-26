@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe FoodFacade do
   it '.find_coords', :vcr do

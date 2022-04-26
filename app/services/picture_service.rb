@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PictureService
   def self.connection
     url = 'https://api.pexels.com/v1/search?'
