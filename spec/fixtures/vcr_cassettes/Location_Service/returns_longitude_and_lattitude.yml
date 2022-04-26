@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.mapquestapi.com/geocoding/v1/address?key=JfU58AZQVRuGEpnfvfU6duSAtw9yWAsx&location=Denver,CO
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key&location=Denver,CO
     body:
       encoding: US-ASCII
       string: ''
@@ -15,13 +15,13 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: ''
+      code: 403
+      message: Forbidden
     headers:
       Date:
       - Tue, 26 Apr 2022 15:06:43 GMT
       Content-Type:
-      - application/json;charset=UTF-8
+      - text/plain
       Content-Length:
       - '1735'
       Access-Control-Allow-Methods:

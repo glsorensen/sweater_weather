@@ -10,18 +10,20 @@ http_interactions:
       User-Agent:
       - Faraday v2.2.0
       Authorization:
-      - Bearer _jexkdpHTD2uTMAQ3f2MAaRwlYav0Ja7K-dNKMsaKcM5eDWORGHzCbDPJCnmT8LGwL5eC2t8eBuTbk10yy_tTjQuv0hvHJb3Ce5ePI2MtSd46ujcUwUhr4lDvXdlYnYx
+      - Bearer
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 400
+      message: Bad Request
     headers:
       Connection:
       - keep-alive
+      Content-Length:
+      - '171'
       Content-Type:
       - application/json
       Ratelimit-Dailylimit:
@@ -58,10 +60,6 @@ http_interactions:
       - MISS
       X-Cache-Hits:
       - '0'
-      Vary:
-      - Accept-Encoding
-      Transfer-Encoding:
-      - chunked
     body:
       encoding: ASCII-8BIT
       string: '{"businesses": [{"id": "kQxM1xlaZfQmXpKaqMTNnw", "alias": "wonderful-bistro-pueblo",
