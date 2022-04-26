@@ -16,6 +16,7 @@ class Munchie
       summary: get_weather[:current][:weather].first[:description],
       temperature: get_weather[:current][:temp]
     }
+  
     @yelp_results = {
       name: yelp_results[:businesses].first[:name],
       address: yelp_results[:businesses].first[:location][:display_address]

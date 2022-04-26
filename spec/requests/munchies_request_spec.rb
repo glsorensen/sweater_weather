@@ -24,7 +24,7 @@ describe "munchies API" do
     expect(munchie[:attributes]).to have_key(:forecast)
     expect(munchie[:attributes][:forecast]).to be_a(Hash)
     expect(munchie[:attributes][:forecast]).to have_key(:temperature)
-    expect(munchie[:attributes][:forecast][:temperature]).to eq(57.76)
+    expect(munchie[:attributes][:forecast][:temperature]).to be_a(Float)
     expect(munchie[:attributes][:forecast]).to have_key(:summary)
     expect(munchie[:attributes][:forecast][:summary]).to eq("clear sky")
     expect(munchie[:attributes][:yelp_results]).to be_a(Hash)

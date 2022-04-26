@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.yelp.com/v3/businesses/search?limit=3&location=pueblo&term=chinese
+    uri: https://api.yelp.com/v3/businesses/search?limit=1&location=pueblo&term=chinese
     body:
       encoding: US-ASCII
       string: ''
@@ -10,56 +10,58 @@ http_interactions:
       User-Agent:
       - Faraday v2.2.0
       Authorization:
-      - Bearer
+      - Bearer _jexkdpHTD2uTMAQ3f2MAaRwlYav0Ja7K-dNKMsaKcM5eDWORGHzCbDPJCnmT8LGwL5eC2t8eBuTbk10yy_tTjQuv0hvHJb3Ce5ePI2MtSd46ujcUwUhr4lDvXdlYnYx
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
       Connection:
       - keep-alive
-      Content-Length:
-      - '171'
       Content-Type:
       - application/json
-      Ratelimit-Dailylimit:
-      - '5000'
       X-Routing-Service:
-      - routing-main--uswest2-6f9cc7c6d9-qp5j9; site=public_api_v3
-      Ratelimit-Remaining:
-      - '4982'
+      - routing-main--uswest2-dbd49b665-2b2db; site=public_api_v3
       X-B3-Sampled:
       - '0'
-      Ratelimit-Resettime:
-      - '2022-04-26T00:00:00+00:00'
       X-Zipkin-Id:
-      - ca8db015bf792351
+      - 315acada94825add
       Server:
       - envoy
+      Ratelimit-Remaining:
+      - '5000'
+      Ratelimit-Resettime:
+      - '2022-04-27T00:00:00+00:00'
+      Ratelimit-Dailylimit:
+      - '5000'
       X-Cloudmap:
       - routing_uswest2
       X-Proxied:
-      - 10-69-152-12-uswest2bprod
+      - 10-69-173-40-uswest2bprod
       X-Extlb:
-      - 10-69-152-12-uswest2bprod
+      - 10-69-173-40-uswest2bprod
       Cache-Control:
       - max-age=0, no-store, private, no-transform
       Accept-Ranges:
       - bytes
       Date:
-      - Mon, 25 Apr 2022 15:35:56 GMT
+      - Tue, 26 Apr 2022 15:21:14 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-den8248-DEN
+      - cache-sjc10062-SJC
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: ASCII-8BIT
       string: '{"businesses": [{"id": "kQxM1xlaZfQmXpKaqMTNnw", "alias": "wonderful-bistro-pueblo",
@@ -71,26 +73,7 @@ http_interactions:
         N Elizabeth St", "address2": "Ste 120", "address3": "", "city": "Pueblo",
         "zip_code": "81008", "country": "US", "state": "CO", "display_address": ["4602
         N Elizabeth St", "Ste 120", "Pueblo, CO 81008"]}, "phone": "+17195440233",
-        "display_phone": "(719) 544-0233", "distance": 4166.934346162075}, {"id":
-        "M4MwxQAA58B7ENV8ootI-w", "alias": "kans-kitchen-pueblo", "name": "Kan''s
-        Kitchen", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RxBfJ3hjre51jCpXqNlfjA/o.jpg",
-        "is_closed": false, "url": "https://www.yelp.com/biz/kans-kitchen-pueblo?adjust_creative=iEobXYc1gbL99nw7BX4ytg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=iEobXYc1gbL99nw7BX4ytg",
-        "review_count": 24, "categories": [{"alias": "chinese", "title": "Chinese"}],
-        "rating": 4.5, "coordinates": {"latitude": 38.2401504516602, "longitude":
-        -104.643249511719}, "transactions": ["delivery"], "price": "$", "location":
-        {"address1": "1620 S Prairie Ave", "address2": null, "address3": null, "city":
-        "Pueblo", "zip_code": "81005", "country": "US", "state": "CO", "display_address":
-        ["1620 S Prairie Ave", "Pueblo, CO 81005"]}, "phone": "+17195660209", "display_phone":
-        "(719) 566-0209", "distance": 5006.081451826012}, {"id": "LRzlrS7no7wlYKqFV_3RZg",
-        "alias": "pueblo-dragon-pueblo", "name": "Pueblo Dragon", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/2OdZdQecxqSFEBPNTbux7A/o.jpg",
-        "is_closed": false, "url": "https://www.yelp.com/biz/pueblo-dragon-pueblo?adjust_creative=iEobXYc1gbL99nw7BX4ytg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=iEobXYc1gbL99nw7BX4ytg",
-        "review_count": 38, "categories": [{"alias": "chinese", "title": "Chinese"}],
-        "rating": 3.5, "coordinates": {"latitude": 38.2349771, "longitude": -104.662556},
-        "transactions": ["delivery"], "price": "$$", "location": {"address1": "1867
-        S Pueblo Blvd", "address2": "", "address3": "", "city": "Pueblo", "zip_code":
-        "81005", "country": "US", "state": "CO", "display_address": ["1867 S Pueblo
-        Blvd", "Pueblo, CO 81005"]}, "phone": "+17195619202", "display_phone": "(719)
-        561-9202", "distance": 6351.392348954074}], "total": 20, "region": {"center":
-        {"longitude": -104.62348937988281, "latitude": 38.28234605423732}}}'
-  recorded_at: Mon, 25 Apr 2022 15:35:56 GMT
+        "display_phone": "(719) 544-0233", "distance": 4166.934346162075}], "total":
+        20, "region": {"center": {"longitude": -104.62348937988281, "latitude": 38.28234605423732}}}'
+  recorded_at: Tue, 26 Apr 2022 15:21:14 GMT
 recorded_with: VCR 6.1.0
