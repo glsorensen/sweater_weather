@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Forecast Service' do
   it 'returns a faraday response', :vcr do
-      connection = ForecastService.connection
-      expect(connection).to be_a(Faraday::Connection)
+    connection = ForecastService.connection
+    expect(connection).to be_a(Faraday::Connection)
   end
 
   it 'returns forecast data form longitude and latitude', :vcr do
-    data = {:lat=>39.738453, :lng=>-104.984853}
-   forecast = ForecastService.get_forecast(data[:lat], data[:lng])
-   expect(forecast).to be_a Hash
-   expect(forecast).to_not have_key(:minutely)
+    data = { lat: 39.738453, lng: -104.984853 }
+    forecast = ForecastService.get_forecast(data[:lat], data[:lng])
+    expect(forecast).to be_a Hash
+    expect(forecast).to_not have_key(:minutely)
     expect(forecast[:current]).to have_key(:dt)
     expect(forecast[:current]).to have_key(:sunrise)
     expect(forecast[:current]).to have_key(:sunset)

@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 RSpec.describe 'forecast request' do
   it 'returns json' do
-
-    headers = { 'CONTENT_TYPE' => 'application/json', "Accept" => 'application/json' }
-    get '/api/v1/forecast', headers: headers, params: { location: "denver,co" }
+    headers = { 'CONTENT_TYPE' => 'application/json', 'Accept' => 'application/json' }
+    get '/api/v1/forecast', headers: headers, params: { location: 'denver,co' }
     forecast = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful
     expect(response.status).to eq(200)
@@ -60,5 +61,6 @@ RSpec.describe 'forecast request' do
     expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:dew_point)
     expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:wind_deg)
     expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:wind_speed)
-    expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:wind_gust)  end
+    expect(forecast[:data][:attributes][:hourly_weather][0]).to_not have_key(:wind_gust)
+  end
 end

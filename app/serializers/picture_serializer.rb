@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PictureSerializer
   def self.image(background, location)
     { "data":
@@ -18,7 +20,6 @@ class PictureSerializer
             "logo": background[:photos][0][:src][:small]
           }
         }
-      }
-    }
+      } }
   end
 end

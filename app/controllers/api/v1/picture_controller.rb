@@ -1,18 +1,24 @@
-class Api::V1::PictureController < ApplicationController
-  before_action :check_location
+# frozen_string_literal: true
 
-  def index
-    background = PictureFacade.find_forecast(@location)
-    render json: PictureSerializer.image(background, @location)
-  end
+module Api
+  module V1
+    class PictureController < ApplicationController
+      before_action :check_location
 
-  private
+      def index
+        background = PictureFacade.find_forecast(@location)
+        render json: PictureSerializer.image(background, @location)
+      end
 
-  def check_location
-    if params[:location].present?
-      @location = params[:location]
-    else
-      render status: 404
+      private
+
+      def check_location
+        if params[:location].present?
+          @location = params[:location]
+        else
+          render status: 404
+        end
+      end
     end
   end
 end

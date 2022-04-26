@@ -1,18 +1,24 @@
-class Api::V1::ForecastController < ApplicationController
-  before_action :check_location
+# frozen_string_literal: true
 
-  def index
-    forecast = ForecastFacade.find_forecast(@coordiantes[:lat], @coordiantes[:lng])
-    render json: ForecastSerializer.weather(forecast)
-  end
+module Api
+  module V1
+    class ForecastController < ApplicationController
+      before_action :check_location
 
-  private
+      def index
+        forecast = ForecastFacade.find_forecast(@coordiantes[:lat], @coordiantes[:lng])
+        render json: ForecastSerializer.weather(forecast)
+      end
 
-  def check_location
-    if params[:location].present?
-      @coordiantes = LocationFacade.find_coords(params[:location])
-    else
-      render status: 404
+      private
+
+      def check_location
+        if params[:location].present?
+          @coordiantes = LocationFacade.find_coords(params[:location])
+        else
+          render status: 404
+        end
+      end
     end
   end
 end

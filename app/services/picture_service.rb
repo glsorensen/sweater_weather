@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class PictureService
   def self.connection
-    url = "https://api.pexels.com/v1/search?"
-    Faraday.new(url: url, headers: { "Authorization": ENV['pexel_api']})
+    url = 'https://api.pexels.com/v1/search?'
+    Faraday.new(url: url, headers: { "Authorization": ENV['pexel_api'] })
   end
 
   def self.get_image(location)
