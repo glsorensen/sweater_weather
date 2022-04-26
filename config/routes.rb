@@ -4,6 +4,7 @@ Rails.application.routes.draw do
    namespace :v1 do
      get '/forecast', to: 'forecast#index'
      get '/pictures', to: 'picture#index'
+     resources :munchies, only: [:index]
    end
  end
 end

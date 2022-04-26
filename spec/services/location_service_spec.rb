@@ -8,6 +8,7 @@ RSpec.describe 'Location Service' do
 
   it 'returns longitude and lattitude', :vcr do
     get_location = LocationService.get_coordinates("Denver,CO")
+  
     expect(get_location).to be_a Hash
     expect(get_location).to have_key(:lat)
     expect(get_location).to have_key(:lng)
