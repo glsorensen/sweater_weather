@@ -2,7 +2,7 @@
 
 module Api
   module V1
-    class PictureController < ApplicationController
+    class PicturesController < ApplicationController
       before_action :check_location
 
       def index
