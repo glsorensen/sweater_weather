@@ -5,6 +5,7 @@ Rails.application.routes.draw do
      get '/forecast', to: 'forecast#index'
      get '/pictures', to: 'picture#index'
      resources :munchies, only: [:index]
+     post '/users', to: 'users#create'
    end
  end
 end
