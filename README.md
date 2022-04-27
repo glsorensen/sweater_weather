@@ -27,7 +27,7 @@
     ```
 ## API Info:
 
-Please checkout the full API documentation [here](https://documenter.getpostman.com/view/20017443/UyrEfthS)
+Please checkout the full API documentation [here](https://documenter.getpostman.com/view/20017443/UyrEgEFp)
 
 ### Consumed:
     - OpenWeather
