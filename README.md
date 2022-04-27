@@ -2,7 +2,7 @@
 
 ## Welcome to Seater Weather,
 
-#### Sweater Weather is a Rails API application used to return data for road trips, weather, and photos of the locations. The vareaty of endpoints will allow users to input params on the front end and return weather, food, length, and other details realated to the trip.
+#### Sweater Weather is a Rails API application used to return data for road trips. The variety of endpoints will allow users to input params on the front end and return weather, food, length, and other details realated to the trip.
 
 #### This app will be used in conjunction with a front end framework like React.
 
@@ -52,7 +52,6 @@ Please checkout the full API documentation [here](https://documenter.getpostman.
 
 ## Built With:
 
-## BUILT WITH
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />  <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" />  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white"/> <img src="https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white" /> <img src="https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white" /> <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />      
 
 
