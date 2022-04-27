@@ -2,7 +2,7 @@
 
 ## Welcome to Sweater Weather
 
-#### Sweater Weather is a Rails API application used to return data for road trips. The variety of endpoints will allow users to input params on the front end and return weather, food, length, and other details realated to the trip.
+#### Sweater Weather is a Rails API application used to return data for road trips. The variety of endpoints will allow users to input params on a front end application to return weather, food, length, and other details realated to the trip.
 
 #### This app will be used in conjunction with a front end framework like React.
 
