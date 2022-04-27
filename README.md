@@ -1,41 +1,67 @@
-Assignment
-You will build an endpoint that will retrieve food and forecast information for a destination city.
-Your endpoint should follow this format:
-GET /api/v1/munchies?start=denver,co&destination=pueblo,co&food=chinese
-Your API will return:
-the destination city
-estimated travel time from start city to destination city
-the name and address of a restaurant serving THE SPECIFIED TYPE of cuisine
-the current forecast of the destination city
-Your response should be in the format below:
-{
-  "data": {
-    "id": "null",
-    "type": "munchie",
-    "attributes": {
-      "destination_city": "Pueblo, CO",
-      "travel_time": "1 hours 48 min",
-      "forecast": {
-        "summary": "Cloudy with a chance of meatballs",
-        "temperature": "83"
-      },
-      "restaurant": {
-        "name": "Chinese Restaurant",
-        "address": "4602 N. Elizabeth St, Ste 120, Pueblo, CO 81008"
-      }
-    }
-  }
-}
-APIs
-MapQuest Directions API
-to find out how long it will take to travel from your start location to your end location.
-https://developer.mapquest.com/documentation/directions-api/route/get/
-Yelp Fusion API
-to find the name and address of a restaurant in your end location
-Restaurants should be open at the time of arrival
-Restaurants should serve the type of food specified in the request
-https://www.yelp.com/developers/documentation/v3/business_search
-Open Weather Map API
-to find the current forecast at the end location.
-https://openweathermap.org/api
-I will provide a link to the submission form about 15 minutes before the end of the assessment time.
+[![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/dwyl/hapi-auth-jwt2.svg?maxAge=2592000)](https://codecov.io/github/dwyl/hapi-auth-jwt2?branch=main) [![Code Climate](https://codeclimate.com/github/dwyl/esta/badges/gpa.svg)](https://codeclimate.com/github/dwyl/esta)
+
+## Welcome to Seater Weather,
+
+#### Sweater Weather is a Rails API application used to return data for road trips, weather, and photos of the locations. The vareaty of endpoints will allow users to input params on the front end and return weather, food, length, and other details realated to the trip.
+
+#### This app will be used in conjunction with a front end framework like React.
+
+## Getting Started
+
+1. Fork and Clone the repo: [GitHub](https://github.com/glsorensen/sweater_weather)
+2. Install gem packages: `bundle install`
+3. Setup the database: `rails db:{create,migrate}`
+4. Get OpenWeather API key [here](https://openweathermap.org/)
+5. Get MapQuest Geocoding API key [here](https://developer.mapquest.com/documentation/geocoding-api/)
+6. Get Pexels API key [here](https://www.pexels.com/api/)
+7. Get Yelp API key [here](https://www.yelp.com/developers/documentation/v3)
+8. Setup Figaro: `bundle exec figaro install`
+9. Add API keys to `config/application.yml`
+    ```
+    open_weather: put_your_key_here>
+    map_quest: put_your_key_here>
+    map_quest_secret: put_your_key_here>
+    pexel_api:put_your_key_here>
+    YELP_API_KEY: put_your_key_here>
+    YELP_CLIENT_ID: put_your_key_here>
+    ```
+## API Info:
+
+Please checkout the full API documentation [here](https://documenter.getpostman.com/view/20017443/UyrEfthS)
+
+### Consumed:
+    - OpenWeather
+      - [One Call API 1.0](https://openweathermap.org/api/one-call-api)
+        - `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`
+        - Used for weather forecast data. We are utilizing Current, Hourly, and Daily data.
+    - MapQuest
+      - [Directions API - Route](https://developer.mapquest.com/documentation/directions-api/route/get)
+        - `http://www.mapquestapi.com/directions/v2/route?key=KEY&from=Clarendon Blvd,Arlington,VA&to=2400+S+Glebe+Rd,+Arlington,+VA`
+        - Used for getting drive time to determine ETA for destination
+      - [Geocoding API - Address](https://developer.mapquest.com/documentation/geocoding-api/address/get)
+        - `http://www.mapquestapi.com/geocoding/v1/address?key=KEY&location=Washington,DC`
+        - Used for retrieving latitude and longitude coordinates for destination, which is then passed into the OpenWeather API
+    - Pexel
+      - [Search Photos](https://api.pexels.com/v1/search?)
+        - `https://api.unsplash.com/search/photos?page=1&query=cloudy`
+    - Yelp Fusion 
+      - [Business Search](https://www.yelp.com/developers/documentation/v3/business_search)
+        - `https://api.yelp.com/v3/businesses/search?term=tacos&location=denver,co`
+        - Used to search for restaurants at destination city that will be open at time of arrival that matches food/restaurant type selected in request
+
+
+## Built With:
+
+## BUILT WITH
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />  <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" />  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white"/> <img src="https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white" /> <img src="https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white" /> <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" /> <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />      
+
+
+## Testing:
+
+  - This application is fully tested through RSpec. 
+  - You can run RSpec on any directory/file using `bundle exec rspec <directory/file>`
+  - See details here: [SimpleCov](https://github.com/simplecov-ruby/simplecov)
+
+## Contributors
+
+- [Gunnar Sorensen](https://github.com/glsorensen)
