@@ -1,6 +1,6 @@
 [![codecov.io Code Coverage](https://img.shields.io/codecov/c/github/dwyl/hapi-auth-jwt2.svg?maxAge=2592000)](https://codecov.io/github/dwyl/hapi-auth-jwt2?branch=main) [![Code Climate](https://codeclimate.com/github/dwyl/esta/badges/gpa.svg)](https://codeclimate.com/github/dwyl/esta)
 
-## Welcome to Seater Weather
+## Welcome to Sweater Weather
 
 #### Sweater Weather is a Rails API application used to return data for road trips. The variety of endpoints will allow users to input params on the front end and return weather, food, length, and other details realated to the trip.
 
